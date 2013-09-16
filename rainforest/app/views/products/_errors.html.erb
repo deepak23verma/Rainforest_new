@@ -1,0 +1,12 @@
+<% unless @product.errors.empty? %>
+
+<div id ="errorblock">
+	<%= pluralize(@product.errors.count, "error") %> prevented this product from being saved 
+	<ul>
+		<% @product.errors.full_messages.each do |error| %>
+			<li class="errormessage"> <%= error %> </li>
+		<% end %>
+	</ul>
+</div>
+
+<% end %>
