@@ -5,15 +5,15 @@ def index
 end
 
 def show
-@product=product.find(params[:id])
+@product=Product.find(params[:id])
 end
 
 def edit
-	@product=product.find(params[:id])	
+	@product=Product.find(params[:id])	
 end
 
 def update
-	@product=product.find(params[:id])
+	@product=Product.find(params[:id])
 	if @product.update(product_params)
 		redirect_to @product
 	else
@@ -36,9 +36,9 @@ def create
 end
 
 def destroy
-	@product=product.find(params[:id])
+	@product=Product.find(params[:id])
 	@product.destroy
-	redirect to products_path
+	redirect_to products_path
 end
 
 private 

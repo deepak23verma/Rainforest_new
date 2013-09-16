@@ -1,0 +1,7 @@
+<h1 class="product_title"><%= @product.name %> Page</h1>
+
+<p class="product_show_description"><%= @product.description %></p>
+<p class="product_show_price"><%= number_to_currency(@product.price_in_cents/100.00) %></p>
+
+<%= link_to "edit", edit_product_path %>
+<%= link_to "delete", @product, :method=>:delete %>
