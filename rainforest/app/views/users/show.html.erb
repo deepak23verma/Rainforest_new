@@ -1,0 +1,9 @@
+<h1>User Show Page</h1>
+
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.email %>
+
+<% @user.comments.each do |comment| %>
+<%= comment.review  %>
+<% end %>
