@@ -5,3 +5,20 @@
 
 <%= link_to "edit", edit_product_path %>
 <%= link_to "delete", @product, :confirm => "Are you sure you want to delete #{ @product.name}", :method=>:delete %>
+
+<% unless @product.comments.empty? %>
+  <% @product.comments.each do |comment| %>
+  <p><%= comment.review %><br />
+ 
+  Left at: <%= comment.created_at %></p>
+  <% end %>
+<% end %>
+
+<h2> Add a Review </h2>
+<%= form_for([@product, @comment]) do |f| %>
+<%= f.label "Review" %>
+<%= f.text_area :review %>
+<%= f.submit %>
+<% end %>
+
+
